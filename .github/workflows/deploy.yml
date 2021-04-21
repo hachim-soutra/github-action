@@ -1,0 +1,14 @@
+name: Deploy application
+on:
+  push:
+   branches:
+    - master
+jobs:
+  first-job: 
+    name: create
+    runs-on: ubuntu-latest # required
+    steps: # required
+      - uses: actions/checkout@v2
+        run: |
+          npm install
+          npm run prod
