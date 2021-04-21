@@ -4,10 +4,14 @@ on:
     branches:
       - main
 jobs:
-  first-job: 
+  first-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Install NPM dependencies
-        run: |
-          npm install
-          npm run production 
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: git config --global url."https://${{ secrets.PAT }}@github.com/".insteadOf ssh://git@github.com/
+      - run: npm ci
