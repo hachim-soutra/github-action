@@ -9,5 +9,4 @@ jobs:
     steps:
       - name: Install NPM dependencies
         run: |
-          npm i
           npm run production
