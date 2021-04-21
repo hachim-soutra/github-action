@@ -11,4 +11,4 @@ jobs:
         run: |
           cd testapp
           npm install
-          npm run production 
+          npm run watch 
