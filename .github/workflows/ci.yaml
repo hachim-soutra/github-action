@@ -9,5 +9,6 @@ jobs:
     steps:
       - name: Install NPM dependencies
         run: |
+          cd testapp
           npm install
           npm run production 
